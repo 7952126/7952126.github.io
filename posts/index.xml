@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on concise 的博客</title>
+    <link>http://huangshanqing.buzz/posts/</link>
+    <description>Recent content in Posts on concise 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 19 Apr 2020 11:50:38 +0800</lastBuildDate>
+    
+	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>第三篇博客</title>
+      <link>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 19 Apr 2020 11:50:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>如何使用 hugo 搭建个人博客 How to make personal blog via hugo （for Win users）
+ 用 hugo 搭建博客的第一步，就是学习使用 Markdown 语法，这个语法非常简单，很快就能上手。   Before you create your blog，you need to learn how to use markdown. It‘s very easy.  安装 hugo install hugo
+ https://github.com/gohugoio/hugo/releases ，找到 hugo_XXX_Windows 64bit.zip，我选择了大约 40M 的那个。下载并放到 D 盘的 Software 路径下，具体格式为 D:\Software\hugo\hugo.exe ;若没有此路径可以自行创建。   you need to open the link and find a document names hugo_XXX_Windows 64bit.zip and download.</description>
+    </item>
+    
+  </channel>
+</rss>
