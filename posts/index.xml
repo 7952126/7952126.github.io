@@ -6,13 +6,28 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 19 Apr 2020 11:50:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 21:39:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>第三篇博客</title>
+      <title>第二篇博客</title>
+      <link>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Tue, 21 Apr 2020 21:39:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <description>Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
+  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
+  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
+  maven 库中的包一经提交，不可更改，只能升级。
+  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
+  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
+  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。</description>
+    </item>
+    
+    <item>
+      <title>第一篇博客</title>
       <link>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 19 Apr 2020 11:50:38 +0800</pubDate>
       

@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://huangshanqing.buzz/" />
-<meta property="og:updated_time" content="2020-04-19T11:50:38+08:00" />
+<meta property="og:updated_time" content="2020-04-21T21:39:38+08:00" />
 <meta itemprop="name" content="concise 的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="concise 的博客"/>
@@ -122,8 +122,38 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" class="color-inherit dim link">
+            第二篇博客
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
+  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
+  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
+  maven 库中的包一经提交，不可更改，只能升级。
+  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
+  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
+  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。
+        </div>
+          <a href="http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="color-inherit dim link">
-            第三篇博客
+            第一篇博客
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
