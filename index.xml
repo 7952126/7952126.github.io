@@ -12,6 +12,19 @@
     
     
     <item>
+      <title>第三篇博客</title>
+      <link>http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/</link>
+      <pubDate>Tue, 21 Apr 2020 21:39:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/</guid>
+      <description>Collection 体系 Collection 是什么   Collection 可以看作一个接口，类似多态，是不能被实例化的（new Collection）。
+  可以将它具体化的理解为：一篮子鸡蛋，一个队列的人等。它只包含一种元素。
+  作用：批量操作成千上万的数据。
+  Collection 体系有两个很重要的接口：Set，List。
+  List/Set 约定  List   List 是个有序的集合，是一个个有顺序的元素，可以拓展 Collection 体系。 List 有一些其他方法，比如 get，可获取指定位置的元素。 List 中有 n 个元素的时候，会将第一个元素约定为第 0 个，最后一个元素就是第 n-1 个。 在 list 上加个泛型 list&amp;lt;&amp;gt;，它就会变成一个有类型的 list。  ArrayList 基于数组的 list。  ArrayList 是需要给定初始容量的。 动态扩容：每当发现 list 放不下的时候，就通过算法来扩容  Set   set 是个无序且不允许出现重复的集合(判断方法：equals)。  linkedHashSet 和 HashSet 和 TreeSet   HashSet 的顺序是完全随机的</description>
+    </item>
+    
+    <item>
       <title>第二篇博客</title>
       <link>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 21 Apr 2020 21:39:38 +0800</pubDate>
