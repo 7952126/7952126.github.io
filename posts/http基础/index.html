@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>concise 的博客  | 第五篇博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.69.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="第五篇博客" />
+<meta property="og:description" content="http 入门详解 复习  http 是互联网中所有的东西的基石 http 最重要的两种方法：get ，post  http status  就是 404，,200 之类的，具体需要的时候再去百度吧  HTTP 方法  get 方法：想要拿到的东西（请求一个网页） get 请求的数据全部都放在 HTTP request 的 header 中。 post 方法：想要推送的东西（登录） post 方法真正的数据是放在 body 里面的；登录接口一定要用 post 去发起。 http 状态  反爬虫手段  直接拒绝（401/404） 在返回的数据中“投毒”，返回错误的数据。  127.0.0.1 指向本地 码
+ 可爱的 http.cat 喵喵喵 返回 6 开头的状态码就可以骂后端了(可是好像后端是我诶)  body  哎哎哎哎哎哎（postman 好像是个很不错的工具）  http header  referer ：用来做防盗的，比如去 csdn 黏贴代码的时候就会有一个本代码来自 xxx 禁止二传 cookie：为什么服务器能够认识我们（打开淘宝不会显示别人的购物车）。   http 协议是无状态的  http body  encodeURI：输入的东西不是标准的，就会被转译。http 上传输的字符是有限范围内的。  最后附上自己写的代码 package com." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/" />
+
+<meta itemprop="name" content="第五篇博客">
+<meta itemprop="description" content="http 入门详解 复习  http 是互联网中所有的东西的基石 http 最重要的两种方法：get ，post  http status  就是 404，,200 之类的，具体需要的时候再去百度吧  HTTP 方法  get 方法：想要拿到的东西（请求一个网页） get 请求的数据全部都放在 HTTP request 的 header 中。 post 方法：想要推送的东西（登录） post 方法真正的数据是放在 body 里面的；登录接口一定要用 post 去发起。 http 状态  反爬虫手段  直接拒绝（401/404） 在返回的数据中“投毒”，返回错误的数据。  127.0.0.1 指向本地 码
+ 可爱的 http.cat 喵喵喵 返回 6 开头的状态码就可以骂后端了(可是好像后端是我诶)  body  哎哎哎哎哎哎（postman 好像是个很不错的工具）  http header  referer ：用来做防盗的，比如去 csdn 黏贴代码的时候就会有一个本代码来自 xxx 禁止二传 cookie：为什么服务器能够认识我们（打开淘宝不会显示别人的购物车）。   http 协议是无状态的  http body  encodeURI：输入的东西不是标准的，就会被转译。http 上传输的字符是有限范围内的。  最后附上自己写的代码 package com.">
+
+<meta itemprop="wordCount" content="201">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第五篇博客"/>
+<meta name="twitter:description" content="http 入门详解 复习  http 是互联网中所有的东西的基石 http 最重要的两种方法：get ，post  http status  就是 404，,200 之类的，具体需要的时候再去百度吧  HTTP 方法  get 方法：想要拿到的东西（请求一个网页） get 请求的数据全部都放在 HTTP request 的 header 中。 post 方法：想要推送的东西（登录） post 方法真正的数据是放在 body 里面的；登录接口一定要用 post 去发起。 http 状态  反爬虫手段  直接拒绝（401/404） 在返回的数据中“投毒”，返回错误的数据。  127.0.0.1 指向本地 码
+ 可爱的 http.cat 喵喵喵 返回 6 开头的状态码就可以骂后端了(可是好像后端是我诶)  body  哎哎哎哎哎哎（postman 好像是个很不错的工具）  http header  referer ：用来做防盗的，比如去 csdn 黏贴代码的时候就会有一个本代码来自 xxx 禁止二传 cookie：为什么服务器能够认识我们（打开淘宝不会显示别人的购物车）。   http 协议是无状态的  http body  encodeURI：输入的东西不是标准的，就会被转译。http 上传输的字符是有限范围内的。  最后附上自己写的代码 package com."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://huangshanqing.buzz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      concise 的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/&amp;text=%e7%ac%ac%e4%ba%94%e7%af%87%e5%8d%9a%e5%ae%a2" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/&amp;title=%e7%ac%ac%e4%ba%94%e7%af%87%e5%8d%9a%e5%ae%a2" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">第五篇博客</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="0001-01-01T00:00:00Z">January 1, 0001</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="http-入门详解">http 入门详解</h1>
+<h2 id="复习">复习</h2>
+<ol>
+<li>http 是互联网中所有的东西的基石</li>
+<li>http 最重要的两种方法：get ，post</li>
+</ol>
+<h2 id="http-status">http status</h2>
+<ol>
+<li>就是 404，,200 之类的，具体需要的时候再去百度吧</li>
+</ol>
+<h2 id="http-方法">HTTP 方法</h2>
+<ol>
+<li>get 方法：想要拿到的东西（请求一个网页）
+get 请求的数据全部都放在 HTTP request 的 header 中。</li>
+<li>post 方法：想要推送的东西（登录）
+post 方法真正的数据是放在 body 里面的；登录接口一定要用 post 去发起。</li>
+<li>http 状态</li>
+</ol>
+<h2 id="反爬虫手段">反爬虫手段</h2>
+<ol>
+<li>直接拒绝（401/404）</li>
+<li>在返回的数据中“投毒”，返回错误的数据。</li>
+</ol>
+<h2 id="127001-指向本地">127.0.0.1 指向本地</h2>
+<p>码</p>
+<ul>
+<li>可爱的 http.cat 喵喵喵</li>
+<li>返回 6 开头的状态码就可以骂后端了(可是好像后端是我诶)</li>
+</ul>
+<h2 id="body">body</h2>
+<ol>
+<li>哎哎哎哎哎哎（postman 好像是个很不错的工具）</li>
+</ol>
+<h2 id="http-header">http header</h2>
+<ol>
+<li>referer ：用来做防盗的，比如去 csdn 黏贴代码的时候就会有一个本代码来自 xxx 禁止二传</li>
+<li>cookie：为什么服务器能够认识我们（打开淘宝不会显示别人的购物车）。</li>
+</ol>
+<ul>
+<li>http 协议是无状态的</li>
+</ul>
+<h2 id="http-body">http body</h2>
+<ol>
+<li>encodeURI：输入的东西不是标准的，就会被转译。http 上传输的字符是有限范围内的。</li>
+</ol>
+<h2 id="最后附上自己写的代码">最后附上自己写的代码</h2>
+<pre><code>package com.github.hcsp.http;
+
+import com.alibaba.fastjson.JSON;
+import org.apache.http.Header;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+
+public class Crawler {
+public static String loginAndGetResponse(String username, String password) throws IOException {
+//构建一个 Client
+CloseableHttpClient httpClient = HttpClients.createDefault();
+HttpPost httpPost = new HttpPost(&quot;http://47.91.156.35:8000/auth/login&quot;);
+
+        //伪装user-agent  header
+        httpPost.addHeader(&quot;Content-Type&quot;, &quot;application/json&quot;);
+        httpPost.addHeader(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36&quot;);
+
+
+        // 构建body，然后使用你喜欢的JSON序列化库把这个map序列化成一个JSON字符串
+        // 序列化
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;username&quot;, username);
+        map.put(&quot;password&quot;, password);
+
+
+        StringEntity stringEntity = new StringEntity(JSON.toJSONString(map));
+        httpPost.setEntity(stringEntity);
+        // 从这个东西里面拿出header
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        Header[] Header = response.getHeaders(&quot;Set-Cookie&quot;);
+        // 出来的是数组，要用打印数组的方式来打印
+        System.out.println(Arrays.toString(Header));
+        // 拿出body
+        String Body = EntityUtils.toString(response.getEntity());
+        return Body;
+    }
+
+}
+</code></pre><h2 id="引用的包">引用的包</h2>
+<pre><code>        &lt;!-- https://mvnrepository.com/artifact/com.alibaba/fastjson --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+            &lt;version&gt;1.2.68&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+            &lt;artifactId&gt;httpclient&lt;/artifactId&gt;
+            &lt;version&gt;4.5.12&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+            &lt;artifactId&gt;httpclient&lt;/artifactId&gt;
+            &lt;version&gt;4.5.12&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://huangshanqing.buzz/" >
+    &copy;  concise 的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
