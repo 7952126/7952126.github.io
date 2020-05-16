@@ -6,10 +6,19 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 27 Apr 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 11:50:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第六篇博客</title>
+      <link>http://huangshanqing.buzz/posts/java%E7%9A%84io/</link>
+      <pubDate>Sat, 09 May 2020 11:50:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/java%E7%9A%84io/</guid>
+      <description>计算机多级系统 file 与 IO（Input and Output）  cpu，内存以及硬盘：在 cpu 看来，一切硬件的速度都很慢 文件的本质：字节流 字节流：无论是读还是写，都是一个一个字节进行的，看起来就像一条河流   http 协议也是这样，你向服务器发送字节流，服务器返回给你的也是字节流  读取的时候尽量使用绝对路径 file 指的是文件路径 绝对路径：王小明的爸爸；相对路径：爸爸（这个爸爸只有在特定的地方才生效，比如家里）  NIO  在 java 中如果一个名字代表一个类，那加一个 s 就代表相应的工具包  </description>
+    </item>
     
     <item>
       <title>第四篇博客</title>
