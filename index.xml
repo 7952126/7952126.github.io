@@ -6,10 +6,28 @@
     <description>Recent content on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 09 May 2020 11:50:38 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第八篇博客</title>
+      <link>http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Wed, 20 May 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&amp;gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。  </description>
+    </item>
+    
+    <item>
+      <title>第七篇博客</title>
+      <link>http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Sun, 17 May 2020 21:39:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/</guid>
+      <description>IOException 是个很烦人的东西  方法的入口一般是参数，出口一般是 returnXXX。异常是给方法的另外一个出口 其实 IDE 会自动帮忙解决的，不过还是要明白什么意思  JAVA 的异常体系（回来看）  catch （exception）这种语句一般叫做错误处理。  异常相关的内容  throw 和 throws，前者是抛出一个异常，后者只是一个声明 如果调用了一个可能丢出异常的方法，要么自己也扔出一个异常要么用 try，catch 把这个异常给抓住。 throwable，exception 有毒的，是要被抛出来的异常。 runtimeException 是无毒的，是运行时的异常 error 是有毒的   有毒无毒的意思：有毒就是沾上了就要抛异常，无毒就不用。  异常和 error 的区别  异常的栈轨迹  什么是栈轨迹：就是错误里面的 rog.xxx 什么什么的  异常的处理方法  是不是有能力处理这个异常 本方法的异常归不归自己管 如非万不得已，不要忽略异常 尽量使用 JDK 的内置异常  </description>
+    </item>
     
     <item>
       <title>第六篇博客</title>
