@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://huangshanqing.buzz/posts/" />
-<meta property="og:updated_time" content="2020-05-20T14:53:38+08:00" />
+<meta property="og:updated_time" content="2020-06-02T14:53:38+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -96,12 +96,27 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="link black dim">
+        第九篇博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      目前为止我们所接触的东西，基本都是在单线程上运行的 方法执行时发生了什么  main（）方法调用了 a,b 方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，不能用 run 来开启  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="link black dim">
         第八篇博客
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。  
+      数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  
     </div>
   </div>
 </div>

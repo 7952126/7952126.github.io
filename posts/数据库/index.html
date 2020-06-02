@@ -26,22 +26,22 @@
     
     
     <meta property="og:title" content="第八篇博客" />
-<meta property="og:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。  " />
+<meta property="og:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/" />
 <meta property="article:published_time" content="2020-05-20T14:53:38+08:00" />
 <meta property="article:modified_time" content="2020-05-20T14:53:38+08:00" />
 <meta itemprop="name" content="第八篇博客">
-<meta itemprop="description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。  ">
+<meta itemprop="description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  ">
 <meta itemprop="datePublished" content="2020-05-20T14:53:38&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-20T14:53:38&#43;08:00" />
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="121">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="第八篇博客"/>
-<meta name="twitter:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。  "/>
+<meta name="twitter:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  "/>
 
   </head>
 
@@ -195,7 +195,28 @@ where id = 2</li>
 <li>SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）</li>
 </ol>
 <ul>
-<li>防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进去。</li>
+<li>防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#</li>
+</ul>
+<h1 id="docker-的安装">docker 的安装</h1>
+<ol>
+<li>一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了</li>
+<li>后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading</li>
+<li>从礼拜一搞到现在，哎叹一口气。我真的太难了 8</li>
+<li>感觉我的 idea 好像也没怎么好的亚子，还在 running processes</li>
+</ol>
+<h1 id="数据库是怎么设计的原则">数据库是怎么设计的（原则）</h1>
+<ol>
+<li>每个实体一张表（用户/商品）</li>
+</ol>
+<ul>
+<li>每个实体都有一个主键 ID</li>
+<li>按照业务需要去建立索引</li>
+</ul>
+<ol start="2">
+<li>每个关系用一张表联系</li>
+</ol>
+<ul>
+<li>关系型数据库</li>
 </ul>
 <ul class="pa0">
   
