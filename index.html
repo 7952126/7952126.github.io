@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://huangshanqing.buzz/" />
-<meta property="og:updated_time" content="2020-06-02T14:53:38+08:00" />
+<meta property="og:updated_time" content="2020-07-10T14:53:38+08:00" />
 <meta itemprop="name" content="concise 的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="concise 的博客"/>
@@ -122,15 +122,14 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="color-inherit dim link">
-            第九篇博客
+          <a href="http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="color-inherit dim link">
+            第十一篇博客
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          前言 目前为止我们所接触的东西，基本都是在单线程上运行的
-多线程  打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程  为什么需要多线程  举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程的代码实现  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性 总结：创建线程的方式有两个 (1) 继承 Thread 类 (2) 实现 runnable 接口 一般来讲，实现接口的方式比继承类的方式更加的灵活  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  线程不安全的表现  数据错误 ，if-then-do3 死锁   java 中任何的对象都可以当作锁  如何避免多线程的问题  线程：进程中的最小的执行单位，一个进程中最少有一个线程 日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。   几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。   synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）  class Thread { int count = 0; public synchronized void threadMethods(int j) { count++; int i = 1; j = j + 1; } }  同步块同步了什么东西？ (1) synchronized （一个对象）把这个对象当成锁 (2) static synchronized 方法，把 class 对象当成锁 (3)实例的 synchronized 方法把该实例当成锁  使用不可变类：string/integer java 的并发工具包 (1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap (2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了） (3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。 ThreadLocal ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  Object 类的线程方法  java 把线程作为语言特性，提供语言级别的支持 为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法   Object.
+           java8 之前的 refactor，有点复杂，不能简化多少 如果一个名词代表一个类，加 s 就是这个类的工具方法。 匿名内部类和 lamda 表达式的对比   方法引用的名字可以解释这个代码在做什么 当方法变得非常复杂的时候，lamda 表达式会变得很复杂  任何只包含一个抽象方法的接口都可以被自动转换为函数接口 最常用的接口:consumer 重点:function supplier:consumer 的逆向操作 从虚空中变出来一个东西 (感觉讲了一次也记不住 hhhhhhh) 就记住了:写的代码越少越不容易出 bug  
         </div>
-          <a href="http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -147,14 +146,14 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="color-inherit dim link">
-            第八篇博客
+          <a href="http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/" class="color-inherit dim link">
+            第十一篇博客
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  
+          最最基础的开始 
         </div>
-          <a href="http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -171,14 +170,15 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/" class="color-inherit dim link">
-            第七篇博客
+          <a href="http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/" class="color-inherit dim link">
+            第十篇博客
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          IOException 是个很烦人的东西  方法的入口一般是参数，出口一般是 returnXXX。异常是给方法的另外一个出口 其实 IDE 会自动帮忙解决的，不过还是要明白什么意思  JAVA 的异常体系（回来看）  catch （exception）这种语句一般叫做错误处理。  异常相关的内容  throw 和 throws，前者是抛出一个异常，后者只是一个声明 如果调用了一个可能丢出异常的方法，要么自己也扔出一个异常要么用 try，catch 把这个异常给抓住。 throwable，exception 有毒的，是要被抛出来的异常。 runtimeException 是无毒的，是运行时的异常 error 是有毒的   有毒无毒的意思：有毒就是沾上了就要抛异常，无毒就不用。  异常和 error 的区别  异常的栈轨迹  什么是栈轨迹：就是错误里面的 rog.xxx 什么什么的  异常的处理方法  是不是有能力处理这个异常 本方法的异常归不归自己管 如非万不得已，不要忽略异常 尽量使用 JDK 的内置异常  
+          做一个项目要精雕细琢，这个我挺缺失的  年轻的时候最重要的是积累自己的声誉，要让别人觉得自己是靠谱的。 做项目的时候要一丝不苟的写好文档，代码质量要高。 别再加注释代码了！！！！！ 尽量别有本地的依赖  什么是要提交上来的  pom.xml .mvn/wrapper src gitignore  成就感比什么都重要！！！ 虽然我现在还是。。感觉自己没学到很多东西 hhhhhhhh
+现在正式开始写项目 从零开始  在 github 创建一个新的仓库 需要建立新的项目：一般从别人那里抄一个   hcsp 的项目就从 hcsp 里面抄： 正确的代码  cp -r /E/IdeaProjects/read-write-files/ *. .iml 不应该被提交，所以要用 vi.gitignore 把它添加上去 抄完之后要改，不然会被别人嘲笑（哈哈哈哈哈哈哈哈） （这边的项目和自己做 rir 有点像啊）  好的代码习惯  不要妥协（太难了 8） 感觉还是得技术好吧，技术不好就是自己写出来初级的然后再追求更好的？  正式开始干活  httpClient 老样子，从 maven 找依赖库 假装@test 写一个测试 提交   如果不小心提交了多余的东西，就使用,回滚提交  git reset HEAD~1 或者 qu version control 里面找到 log，右键选择 reset
         </div>
-          <a href="http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -195,26 +195,26 @@
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="link black dim">
+              第九篇博客
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="link black dim">
+              第八篇博客
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/" class="link black dim">
+              第七篇博客
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://huangshanqing.buzz/posts/java%E7%9A%84io/" class="link black dim">
               第六篇博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://huangshanqing.buzz/posts/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="link black dim">
-              第四篇博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/" class="link black dim">
-              第三篇博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" class="link black dim">
-              第二篇博客
             </a>
           </h2>
         

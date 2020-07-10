@@ -6,10 +6,38 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 02 Jun 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第十一篇博客</title>
+      <link>http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Fri, 10 Jul 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+      <description> java8 之前的 refactor，有点复杂，不能简化多少 如果一个名词代表一个类，加 s 就是这个类的工具方法。 匿名内部类和 lamda 表达式的对比   方法引用的名字可以解释这个代码在做什么 当方法变得非常复杂的时候，lamda 表达式会变得很复杂  任何只包含一个抽象方法的接口都可以被自动转换为函数接口 最常用的接口:consumer 重点:function supplier:consumer 的逆向操作 从虚空中变出来一个东西 (感觉讲了一次也记不住 hhhhhhh) 就记住了:写的代码越少越不容易出 bug  </description>
+    </item>
+    
+    <item>
+      <title>第十一篇博客</title>
+      <link>http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/</link>
+      <pubDate>Wed, 24 Jun 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/</guid>
+      <description>最最基础的开始 </description>
+    </item>
+    
+    <item>
+      <title>第十篇博客</title>
+      <link>http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 24 Jun 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</guid>
+      <description>做一个项目要精雕细琢，这个我挺缺失的  年轻的时候最重要的是积累自己的声誉，要让别人觉得自己是靠谱的。 做项目的时候要一丝不苟的写好文档，代码质量要高。 别再加注释代码了！！！！！ 尽量别有本地的依赖  什么是要提交上来的  pom.xml .mvn/wrapper src gitignore  成就感比什么都重要！！！ 虽然我现在还是。。感觉自己没学到很多东西 hhhhhhhh
+现在正式开始写项目 从零开始  在 github 创建一个新的仓库 需要建立新的项目：一般从别人那里抄一个   hcsp 的项目就从 hcsp 里面抄： 正确的代码  cp -r /E/IdeaProjects/read-write-files/ *. .iml 不应该被提交，所以要用 vi.gitignore 把它添加上去 抄完之后要改，不然会被别人嘲笑（哈哈哈哈哈哈哈哈） （这边的项目和自己做 rir 有点像啊）  好的代码习惯  不要妥协（太难了 8） 感觉还是得技术好吧，技术不好就是自己写出来初级的然后再追求更好的？  正式开始干活  httpClient 老样子，从 maven 找依赖库 假装@test 写一个测试 提交   如果不小心提交了多余的东西，就使用,回滚提交  git reset HEAD~1 或者 qu version control 里面找到 log，右键选择 reset</description>
+    </item>
     
     <item>
       <title>第九篇博客</title>
