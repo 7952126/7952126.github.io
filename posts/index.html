@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://huangshanqing.buzz/posts/" />
-<meta property="og:updated_time" content="2020-07-10T14:53:38+08:00" />
+<meta property="og:updated_time" content="2020-07-14T14:53:38+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -91,6 +91,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://huangshanqing.buzz/posts/java%E7%9A%84stream/" class="link black dim">
+        第十二篇博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      java 的流   创建一个 stream (1) 最好是不要用 lamda 表达式，最好是单独写一个方法，因为方法名可以表示它在做什么 (2) 方法中可以写非常复杂的代码 (3) 四个操作：filter，sorted，map，collect。filter 就是把符合的给选出来，sort 等于收集？map 操作就是把一个东西映射成另一个东西(可以理解为生成了一个新的流，里面只有我们想要的东西)。collect 是一个终结操作。一个流可以有多个中间操作，但只能有一个终结操作，打开终结操作之后就不能再用这个流了。
+  private 的访问限定是在当前的编译单元(compilation unit)
+  流调试器(我居然装了哈哈哈哈)
+  stream 的 api (1) Collection.stream() (2) Stream.of (3) String.chars() (4) IntStream.range()
+  collercot 与 Collectors (1) 这是最强大的操作 (2) 并发流 parallelStream
+  感觉很多方法不太会，但是这个就这么提交上去很奇怪啊 hhh
+  
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -234,27 +255,6 @@
   作用：批量操作成千上万的数据。
   Collection 体系有两个很重要的接口：Set，List。
   List/Set 约定  List   List 是个有序的集合，是一个个有顺序的元素，可以拓展 Collection 体系。 List 有一些其他方法，比如 get，可获取指定位置的元素。 List 中有 n 个元素的时候，会将第一个元素约定为第 0 个，最后一个元素就是第 n-1 个。 在 list 上加个泛型 list&lt;&gt;，它就会变成一个有类型的 list。  ArrayList 基于数组的 list。  ArrayList 是需要给定初始容量的。 动态扩容：每当发现 list 放不下的时候，就通过算法来扩容  Set   set 是个无序且不允许出现重复的集合(判断方法：equals)。  linkedHashSet 和 HashSet 和 TreeSet   HashSet 的顺序是完全随机的
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" class="link black dim">
-        第二篇博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
-  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
-  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
-  maven 库中的包一经提交，不可更改，只能升级。
-  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
-  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
-  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。
     </div>
   </div>
 </div>

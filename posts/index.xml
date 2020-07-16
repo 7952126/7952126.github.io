@@ -6,10 +6,25 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 10 Jul 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第十二篇博客</title>
+      <link>http://huangshanqing.buzz/posts/java%E7%9A%84stream/</link>
+      <pubDate>Tue, 14 Jul 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/java%E7%9A%84stream/</guid>
+      <description>java 的流   创建一个 stream (1) 最好是不要用 lamda 表达式，最好是单独写一个方法，因为方法名可以表示它在做什么 (2) 方法中可以写非常复杂的代码 (3) 四个操作：filter，sorted，map，collect。filter 就是把符合的给选出来，sort 等于收集？map 操作就是把一个东西映射成另一个东西(可以理解为生成了一个新的流，里面只有我们想要的东西)。collect 是一个终结操作。一个流可以有多个中间操作，但只能有一个终结操作，打开终结操作之后就不能再用这个流了。
+  private 的访问限定是在当前的编译单元(compilation unit)
+  流调试器(我居然装了哈哈哈哈)
+  stream 的 api (1) Collection.stream() (2) Stream.of (3) String.chars() (4) IntStream.range()
+  collercot 与 Collectors (1) 这是最强大的操作 (2) 并发流 parallelStream
+  感觉很多方法不太会，但是这个就这么提交上去很奇怪啊 hhh
+  </description>
+    </item>
     
     <item>
       <title>第十一篇博客</title>
