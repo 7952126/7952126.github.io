@@ -6,10 +6,22 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 16 Jul 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第十五篇博客</title>
+      <link>http://huangshanqing.buzz/posts/%E5%AD%A6%E4%B9%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</link>
+      <pubDate>Tue, 21 Jul 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/%E5%AD%A6%E4%B9%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</guid>
+      <description>如何用搜索引擎解决问题  国内用 bing or google 还有个 jira? 奇奇怪怪的东西 目标:90%的问题可以通过几分钟的尝试得到答案  搜索需要不断尝试，反复试错  第一次搜索的时候，需要做多次尝试  用搜索解决问题的过程   准备关键字 (1) 越详细越好 (2) 体现共性而非特性
+ 比如：cannot find table xxx (3) 想要更准确的结果，需要人肉分词   把虚词删掉 找到通往最终答案的指路牌:关键词的术语 在技术领域，英文搜索的准确率最高(还是自己懒) 读官方文档的效率更高，不需要去搜索二手中文信息 -xxx，排除这个关键字  (4) 站内搜索，加上 site:xxxx.com
+ 找电子书: 深入了解 java 虚拟机第三版 site: github.com filetype:pdf;    更换，调成关键字 (1) 更换 or 调整关键字 (2) 要耐心看完大段英文文档 (3) 英文的搜索就是更加准确 (4) 对关键字的组合，让它能找到自己想要的东西
+  如果 google 解决不了问题 (1) github 的站内搜索 我觉得这个太难了。。。</description>
+    </item>
     
     <item>
       <title>第十三篇博客</title>
