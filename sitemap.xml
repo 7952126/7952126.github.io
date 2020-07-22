@@ -4,86 +4,76 @@
   
   <url>
     <loc>http://huangshanqing.buzz/</loc>
-    <lastmod>2020-07-21T14:53:38+08:00</lastmod>
+    <lastmod>2020-07-16T14:53:38+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://huangshanqing.buzz/posts/</loc>
-    <lastmod>2020-07-21T14:53:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://huangshanqing.buzz/posts/%E5%AD%A6%E4%B9%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
-    <lastmod>2020-07-21T14:53:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://huangshanqing.buzz/posts/java8%E7%9A%84%E7%89%B9%E6%80%A7/</loc>
     <lastmod>2020-07-16T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://huangshanqing.buzz/posts/13.java8%E7%9A%84%E7%89%B9%E6%80%A7/</loc>
     <lastmod>2020-07-16T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/java%E7%9A%84stream/</loc>
+    <loc>http://huangshanqing.buzz/posts/14.%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-07-16T14:53:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://huangshanqing.buzz/posts/12.java%E7%9A%84stream/</loc>
     <lastmod>2020-07-14T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <loc>http://huangshanqing.buzz/posts/11.java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2020-07-10T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/</loc>
+    <loc>http://huangshanqing.buzz/posts/8.%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2020-06-24T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2020-06-24T14:53:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2020-06-02T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2020-05-20T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/</loc>
+    <loc>http://huangshanqing.buzz/posts/7.io%E7%9A%84%E5%BC%82%E5%B8%B8/</loc>
     <lastmod>2020-05-17T21:39:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/java%E7%9A%84io/</loc>
+    <loc>http://huangshanqing.buzz/posts/6.java%E7%9A%84io/</loc>
     <lastmod>2020-05-09T11:50:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
+    <loc>http://huangshanqing.buzz/posts/4.web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</loc>
     <lastmod>2020-04-27T14:53:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/</loc>
+    <loc>http://huangshanqing.buzz/posts/3.collection%E4%BD%93%E7%B3%BB/</loc>
     <lastmod>2020-04-21T21:39:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
+    <loc>http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2020-04-21T21:39:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://huangshanqing.buzz/posts/1.%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-04-19T11:50:38+08:00</lastmod>
   </url>
   
@@ -96,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://huangshanqing.buzz/posts/5.http%E5%9F%BA%E7%A1%80/</loc>
   </url>
   
 </urlset>

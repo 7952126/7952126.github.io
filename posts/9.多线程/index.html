@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>concise 的博客  | 第九篇博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.69.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="第九篇博客" />
+<meta property="og:description" content="前言 目前为止我们所接触的东西，基本都是在单线程上运行的
+多线程  打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程  为什么需要多线程  举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程的代码实现  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性 总结：创建线程的方式有两个 (1) 继承 Thread 类 (2) 实现 runnable 接口 一般来讲，实现接口的方式比继承类的方式更加的灵活  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  线程不安全的表现  数据错误 ，if-then-do3 死锁   java 中任何的对象都可以当作锁  如何避免多线程的问题  线程：进程中的最小的执行单位，一个进程中最少有一个线程 日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。   几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。   synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）  class Thread { int count = 0; public synchronized void threadMethods(int j) { count&#43;&#43;; int i = 1; j = j &#43; 1; } }  同步块同步了什么东西？ (1) synchronized （一个对象）把这个对象当成锁 (2) static synchronized 方法，把 class 对象当成锁 (3)实例的 synchronized 方法把该实例当成锁  使用不可变类：string/integer java 的并发工具包 (1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap (2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了） (3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。 ThreadLocal ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  Object 类的线程方法  java 把线程作为语言特性，提供语言级别的支持 为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法   Object." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/" />
+<meta property="article:published_time" content="2020-06-02T14:53:38+08:00" />
+<meta property="article:modified_time" content="2020-06-02T14:53:38+08:00" />
+<meta itemprop="name" content="第九篇博客">
+<meta itemprop="description" content="前言 目前为止我们所接触的东西，基本都是在单线程上运行的
+多线程  打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程  为什么需要多线程  举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程的代码实现  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性 总结：创建线程的方式有两个 (1) 继承 Thread 类 (2) 实现 runnable 接口 一般来讲，实现接口的方式比继承类的方式更加的灵活  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  线程不安全的表现  数据错误 ，if-then-do3 死锁   java 中任何的对象都可以当作锁  如何避免多线程的问题  线程：进程中的最小的执行单位，一个进程中最少有一个线程 日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。   几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。   synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）  class Thread { int count = 0; public synchronized void threadMethods(int j) { count&#43;&#43;; int i = 1; j = j &#43; 1; } }  同步块同步了什么东西？ (1) synchronized （一个对象）把这个对象当成锁 (2) static synchronized 方法，把 class 对象当成锁 (3)实例的 synchronized 方法把该实例当成锁  使用不可变类：string/integer java 的并发工具包 (1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap (2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了） (3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。 ThreadLocal ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  Object 类的线程方法  java 把线程作为语言特性，提供语言级别的支持 为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法   Object.">
+<meta itemprop="datePublished" content="2020-06-02T14:53:38&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-02T14:53:38&#43;08:00" />
+<meta itemprop="wordCount" content="192">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第九篇博客"/>
+<meta name="twitter:description" content="前言 目前为止我们所接触的东西，基本都是在单线程上运行的
+多线程  打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程  为什么需要多线程  举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程的代码实现  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性 总结：创建线程的方式有两个 (1) 继承 Thread 类 (2) 实现 runnable 接口 一般来讲，实现接口的方式比继承类的方式更加的灵活  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  线程不安全的表现  数据错误 ，if-then-do3 死锁   java 中任何的对象都可以当作锁  如何避免多线程的问题  线程：进程中的最小的执行单位，一个进程中最少有一个线程 日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。   几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。   synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）  class Thread { int count = 0; public synchronized void threadMethods(int j) { count&#43;&#43;; int i = 1; j = j &#43; 1; } }  同步块同步了什么东西？ (1) synchronized （一个对象）把这个对象当成锁 (2) static synchronized 方法，把 class 对象当成锁 (3)实例的 synchronized 方法把该实例当成锁  使用不可变类：string/integer java 的并发工具包 (1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap (2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了） (3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。 ThreadLocal ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  Object 类的线程方法  java 把线程作为语言特性，提供语言级别的支持 为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法   Object."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://huangshanqing.buzz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      concise 的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/&amp;text=%e7%ac%ac%e4%b9%9d%e7%af%87%e5%8d%9a%e5%ae%a2" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/&amp;title=%e7%ac%ac%e4%b9%9d%e7%af%87%e5%8d%9a%e5%ae%a2" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">第九篇博客</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-06-02T14:53:38&#43;08:00">June 2, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="前言">前言</h1>
+<p>目前为止我们所接触的东西，基本都是在单线程上运行的</p>
+<h1 id="多线程">多线程</h1>
+<ul>
+<li>打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程</li>
+</ul>
+<h2 id="为什么需要多线程">为什么需要多线程</h2>
+<ul>
+<li>举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。</li>
+</ul>
+<h2 id="线程的代码实现">线程的代码实现</h2>
+<ol>
+<li>最简单的开启线程的方法：</li>
+</ol>
+<pre><code>new Thread(Crawler::slowFileOperation()).start();
+
+    slowFileOperation()
+     slowFileOperation()
+      slowFileOperation()
+</code></pre><ul>
+<li>.start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性</li>
+<li>总结：创建线程的方式有两个
+(1) 继承 Thread 类
+(2) 实现 runnable 接口
+一般来讲，实现接口的方式比继承类的方式更加的灵活</li>
+</ul>
+<ol start="2">
+<li>方法栈
+(1) 每调用多一个线程，就有了多一个的方法栈
+(2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的
+(3) 线程的共享变量，是多线程几乎所有坑的来源</li>
+</ol>
+<h2 id="多线程问题的来源">多线程问题的来源</h2>
+<ol>
+<li>多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行</li>
+<li>线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样</li>
+</ol>
+<ul>
+<li>原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。</li>
+<li>原子操作：某事情在某时刻只能被一个线程去做</li>
+</ul>
+<h2 id="线程不安全的表现">线程不安全的表现</h2>
+<ol>
+<li>数据错误 ，if-then-do3</li>
+<li>死锁</li>
+</ol>
+<ul>
+<li>java 中任何的对象都可以当作锁</li>
+</ul>
+<h2 id="如何避免多线程的问题">如何避免多线程的问题</h2>
+<ul>
+<li>线程：进程中的最小的执行单位，一个进程中最少有一个线程</li>
+<li>日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。</li>
+</ul>
+<ul>
+<li>几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。</li>
+</ul>
+<ol>
+<li>synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）</li>
+</ol>
+<pre><code>class Thread {
+    int count = 0;
+
+    public synchronized void threadMethods(int j) {
+        count++;
+        int i = 1;
+        j = j + 1;
+    }
+}
+</code></pre><ul>
+<li>同步块同步了什么东西？
+(1) synchronized （一个对象）把这个对象当成锁
+(2) static synchronized 方法，把 class 对象当成锁
+(3)实例的 synchronized 方法把该实例当成锁</li>
+</ul>
+<ol start="2">
+<li>使用不可变类：string/integer</li>
+<li>java 的并发工具包
+(1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap
+(2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了）
+(3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。</li>
+<li>ThreadLocal
+ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗</li>
+</ol>
+<h2 id="适用于多线程的场景">适用于多线程的场景</h2>
+<ol>
+<li>CPU 密集型带来的提升有限</li>
+</ol>
+<ul>
+<li>解压，解码等靠 cpu 解决的</li>
+</ul>
+<ol start="2">
+<li>IO 密集型</li>
+</ol>
+<ul>
+<li>（下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了</li>
+<li>网络，与前者差不多</li>
+</ul>
+<h1 id="object-类的线程方法">Object 类的线程方法</h1>
+<ol>
+<li>java 把线程作为语言特性，提供语言级别的支持</li>
+<li>为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法</li>
+</ol>
+<ul>
+<li>Object.wait() 使得当前的线程放弃 monitor 并且进入 wait 状态，直到其他线程把它唤醒</li>
+<li>Object.notify() 另外一个线程通过 notify 唤醒其中一个等待 monitor 的线程</li>
+<li>Object.notifyAll() 唤醒所有等待 monitor 的线程</li>
+</ul>
+<h1 id="线程池">线程池</h1>
+<h2 id="为什么需要线程池">为什么需要线程池</h2>
+<ol>
+<li>线程是昂贵的</li>
+<li>线程池：预先定义好的若干个线程，需要的时候就可以直接使用</li>
+</ol>
+<h2 id="线程池的构造函数中的参数都是什么含义">线程池的构造函数中的参数都是什么含义</h2>
+<ol>
+<li>corePoolSize
+代表的是核心线程数，当任务量小于线程核心数的时候，线程池会不断新建线程来处理，corePoolSize 表示线程池中通常情况下回保留的线程数量</li>
+<li>workQueue
+若用户提交的任务数量多于核心线程数，那多于的暂时无法处理的任务就会存在 workQueue 中
+工作队列可简单分为无界队列和有界队列</li>
+<li>maximumPoolSize
+限制线程数量的上限，此时如果普通线程数量达到了上限，再来新的任务有可能会被拒绝</li>
+<li>rejectedExecutionHandler 这是线程池的拒绝策略，一共有四种
+(1)AbortPolicy,抛出一个 RejectedExecutionException 给用户
+(2)DiscardPolicy,当策略来临的时候不会给用户反馈，而是悄无声息的拒绝
+(3)DiscardOldestPolicy 讲最早储存在工作队列的任务丢掉，然后再试图执行当前提交进来的任务
+(4)CallerRunPolicy 用户线程需要处理完当前任务才可以做其他事情</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://huangshanqing.buzz/" >
+    &copy;  concise 的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

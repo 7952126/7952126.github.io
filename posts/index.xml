@@ -6,48 +6,36 @@
     <description>Recent content in Posts on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 21 Jul 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>第十五篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E5%AD%A6%E4%B9%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</link>
-      <pubDate>Tue, 21 Jul 2020 14:53:38 +0800</pubDate>
-      
-      <guid>http://huangshanqing.buzz/posts/%E5%AD%A6%E4%B9%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</guid>
-      <description>如何用搜索引擎解决问题  国内用 bing or google 还有个 jira? 奇奇怪怪的东西 目标:90%的问题可以通过几分钟的尝试得到答案  搜索需要不断尝试，反复试错  第一次搜索的时候，需要做多次尝试  用搜索解决问题的过程   准备关键字 (1) 越详细越好 (2) 体现共性而非特性
- 比如：cannot find table xxx (3) 想要更准确的结果，需要人肉分词   把虚词删掉 找到通往最终答案的指路牌:关键词的术语 在技术领域，英文搜索的准确率最高(还是自己懒) 读官方文档的效率更高，不需要去搜索二手中文信息 -xxx，排除这个关键字  (4) 站内搜索，加上 site:xxxx.com
- 找电子书: 深入了解 java 虚拟机第三版 site: github.com filetype:pdf;    更换，调成关键字 (1) 更换 or 调整关键字 (2) 要耐心看完大段英文文档 (3) 英文的搜索就是更加准确 (4) 对关键字的组合，让它能找到自己想要的东西
-  如果 google 解决不了问题 (1) github 的站内搜索 我觉得这个太难了。。。</description>
-    </item>
-    
-    <item>
       <title>第十三篇博客</title>
-      <link>http://huangshanqing.buzz/posts/java8%E7%9A%84%E7%89%B9%E6%80%A7/</link>
+      <link>http://huangshanqing.buzz/posts/13.java8%E7%9A%84%E7%89%B9%E6%80%A7/</link>
       <pubDate>Thu, 16 Jul 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/java8%E7%9A%84%E7%89%B9%E6%80%A7/</guid>
+      <guid>http://huangshanqing.buzz/posts/13.java8%E7%9A%84%E7%89%B9%E6%80%A7/</guid>
       <description>java8 函数式编程 要认真的看视频哦~
 函数式编程简介 and why java8  函数式编程没有 if 之类的赋值 函数不是 java 的一种数据类型 函数式编程不会修改传入的数据 为什么要用 java8 (1) 首先就是可以写更少的代码，这样就可以写更少的 bug (2) 对并发比较有利，可以高效利用计算机多核心的能力(但是多线程我感觉不太容易啊啊啊啊啊啊啊啊)  java8 的新特性  forEach(自己有用到过) 在接口中支持 default(默认方法) 支持函数式接口和 lambda 表达式 Java Stream API Optional 类,可以避免空指针异常 然后在讲抽取重复的代码？然后 lambda 表达式？这个讲过的吧。。。  lambda 表达式与函数式接口  lambda 表达式: 可传递匿名函数的一种方式 语法：参数列表+箭头+函数体 lambda 表达式没有方法名 lambda 表达式，如果只有一条语句，可以省略{}，有多条语句就不能够省略   匿名类:没有名称的类，其名称由 Java 编译器给出，一般是形如：外部类名称+$+匿名类顺序，没有名称也就是其他地方就不能引用，不能实例化，只用一次，当然也就不能有构造器。最有名的匿名类是 Comparator。  lambda 能干什么:告别匿名内部类 函数式接口:只定义一个抽象方法的接口(当然，可以有很多默认接口) 函数描述符：函数式接口的抽象方法的签名，基本上就是 lambda 表达式的签名   (T,T) -&amp;gt; int  java8 常用的函数 (1) predicate 定义了一个名叫 test 的抽象方法。凡是涉及判断的，都可以用这个接口 (2) Consumer 接口。消费一个对象(想到了那个大嘴巴哈哈哈哈) (3) Function 接口。将 input 转化为 output，这就是函数的最基本操作嘛 (4) Supplier 接口。没有传入参数，但会返回一个泛型 T</description>
     </item>
     
     <item>
       <title>第十四篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <link>http://huangshanqing.buzz/posts/14.%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Thu, 16 Jul 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>http://huangshanqing.buzz/posts/14.%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description>算法与数据结构  校招找工作的时候是非常重要的内容。想去好的公司就一定要好好学 程序=算法+数据结构 算法和数据结构都要能够在白板上手写  算法的复杂度  常数时间:eg:叫第 n 个人报号。和问题的规模无关，用 O(1)表示。无论规模多大，都可以在很短的时间内完成   数组寻址是常数时间的  线性时间: eg: 遍历，在 n 个人里面找出小明(这是数据不是人),因为要一个个找所以找的时间看运气。用 O(n)表示 对数时间:eg:在一堆人中找一个一米八的人(用二分法找)。每次规模可以下降一半/二分之一等等。最常见的是二分查找。 还有个平方的？  数组  常见例子:随机寻址，插入/删除，查找 要求手写二分查找  链表  一个寻址是线性时间的东西 插入和删除这个操作，是常数时间的 链表分为单向和双向的。单向链表就只能往后找，双向链表既可以往后又可以往前 要求手写的:翻转列表，判断链表是否成环(这个好像得自己去找？)  栈，队列，哈希表  栈的理解：一抽屉书，最底下的东西是最先放进去的，但是最后才能拿出来。   进栈是 push，出栈是 pop 还要手写栈的实现。。我觉得这次的练习题不会太简单 在 java 中 stack 是有对应的类的：ArrayDeque  队列：在食堂打饭，谁先进去谁先出来。   队列在 java 的作用:  哈希表：查找/插入/删除都是常数时间 O(1)。可以节约时间？   生成很多个哈希桶，节约时间 哈希运算不可逆(它把一个东西映射成更简单的一个东西) 在 java 的世界中最常见的就是 HashMap  HashMap 的前世今生 java 7 HashMap  实现:数组+链表   问题  Hash 桶的个数为什么是 2 的幂 (1) 举个例子：有 16 个桶，hashcode 为 18，想要知道这个数字具体应该放在哪个桶里面可以对它取余数 (2) 在 java 中采用的是算法求址，利用 length-1 去按位与(&amp;amp;)，按位与的时候，只有同为 1 结果才为 1，因此要保证所有的数字都是 1 (3) 保证所有的数都是 1 后，就不会出现有桶是空的了。 transfer 是一切问题的根源 java7 的问题:容易碰到死锁   HashMap 不是线程安全的!</description>
     </item>
     
     <item>
       <title>第十二篇博客</title>
-      <link>http://huangshanqing.buzz/posts/java%E7%9A%84stream/</link>
+      <link>http://huangshanqing.buzz/posts/12.java%E7%9A%84stream/</link>
       <pubDate>Tue, 14 Jul 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/java%E7%9A%84stream/</guid>
+      <guid>http://huangshanqing.buzz/posts/12.java%E7%9A%84stream/</guid>
       <description>java 的流   创建一个 stream (1) 最好是不要用 lamda 表达式，最好是单独写一个方法，因为方法名可以表示它在做什么 (2) 方法中可以写非常复杂的代码 (3) 四个操作：filter，sorted，map，collect。filter 就是把符合的给选出来，sort 等于收集？map 操作就是把一个东西映射成另一个东西(可以理解为生成了一个新的流，里面只有我们想要的东西)。collect 是一个终结操作。一个流可以有多个中间操作，但只能有一个终结操作，打开终结操作之后就不能再用这个流了。
   private 的访问限定是在当前的编译单元(compilation unit)
   流调试器(我居然装了哈哈哈哈)
@@ -59,75 +47,66 @@
     
     <item>
       <title>第十一篇博客</title>
-      <link>http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+      <link>http://huangshanqing.buzz/posts/11.java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Fri, 10 Jul 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+      <guid>http://huangshanqing.buzz/posts/11.java8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
       <description> java8 之前的 refactor，有点复杂，不能简化多少 如果一个名词代表一个类，加 s 就是这个类的工具方法。 匿名内部类和 lamda 表达式的对比   方法引用的名字可以解释这个代码在做什么 当方法变得非常复杂的时候，lamda 表达式会变得很复杂  任何只包含一个抽象方法的接口都可以被自动转换为函数接口 最常用的接口:consumer 重点:function supplier:consumer 的逆向操作 从虚空中变出来一个东西 (感觉讲了一次也记不住 hhhhhhh) 就记住了:写的代码越少越不容易出 bug  </description>
     </item>
     
     <item>
-      <title>第十一篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/</link>
+      <title>第八篇博客</title>
+      <link>http://huangshanqing.buzz/posts/8.%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 24 Jun 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/%E5%A4%8D%E4%B9%A01/</guid>
-      <description>最最基础的开始 </description>
-    </item>
-    
-    <item>
-      <title>第十篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Wed, 24 Jun 2020 14:53:38 +0800</pubDate>
-      
-      <guid>http://huangshanqing.buzz/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://huangshanqing.buzz/posts/8.%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</guid>
       <description>做一个项目要精雕细琢，这个我挺缺失的  年轻的时候最重要的是积累自己的声誉，要让别人觉得自己是靠谱的。 做项目的时候要一丝不苟的写好文档，代码质量要高。 别再加注释代码了！！！！！ 尽量别有本地的依赖  什么是要提交上来的  pom.xml .mvn/wrapper src gitignore  成就感比什么都重要！！！ 虽然我现在还是。。感觉自己没学到很多东西 hhhhhhhh
 现在正式开始写项目 从零开始  在 github 创建一个新的仓库 需要建立新的项目：一般从别人那里抄一个   hcsp 的项目就从 hcsp 里面抄： 正确的代码  cp -r /E/IdeaProjects/read-write-files/ *. .iml 不应该被提交，所以要用 vi.gitignore 把它添加上去 抄完之后要改，不然会被别人嘲笑（哈哈哈哈哈哈哈哈） （这边的项目和自己做 rir 有点像啊）  好的代码习惯  不要妥协（太难了 8） 感觉还是得技术好吧，技术不好就是自己写出来初级的然后再追求更好的？  正式开始干活  httpClient 老样子，从 maven 找依赖库 假装@test 写一个测试 提交   如果不小心提交了多余的东西，就使用,回滚提交  git reset HEAD~1 或者 qu version control 里面找到 log，右键选择 reset</description>
     </item>
     
     <item>
       <title>第九篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <link>http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
       <pubDate>Tue, 02 Jun 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <guid>http://huangshanqing.buzz/posts/9.%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
       <description>前言 目前为止我们所接触的东西，基本都是在单线程上运行的
 多线程  打开电脑管家，可以同时进行杀毒，电脑加速，清理垃圾等任务，就叫多线程  为什么需要多线程  举个例子：在 java 的世界中，如果 main（）方法调用了 a,b 两个方法的话，需要等 a 方法被执行完了才能执行 b 方法。这样的话做事情的速度就会非常慢。但由于 cpu 实在是太快了，如果一个一个的来，那 cpu 的效率就会大打折扣。  线程的代码实现  最简单的开启线程的方法：  new Thread(Crawler::slowFileOperation()).start(); slowFileOperation() slowFileOperation() slowFileOperation()  .start（start 方法）才能让这个线程开启并发执行，如果只是调用了 run()方法，代码还是同步执行的，无法显示出多线程的特性 总结：创建线程的方式有两个 (1) 继承 Thread 类 (2) 实现 runnable 接口 一般来讲，实现接口的方式比继承类的方式更加的灵活  方法栈 (1) 每调用多一个线程，就有了多一个的方法栈 (2) 每个线程里面的方法都是局部变量，属于线程私有的。其他的东西（静态变量等）都是公有的 (3) 线程的共享变量，是多线程几乎所有坑的来源  多线程问题的来源  多线程难的本质问题的：要想象一份代码被 n 个人同时乱序执行 线程增加之后（比如到了 1000），每次执行的时候结果就会不太一样   原因：多个线程在访问同一个非原子变量时，是乱序的，并不知道什么时候会发生。 原子操作：某事情在某时刻只能被一个线程去做  线程不安全的表现  数据错误 ，if-then-do3 死锁   java 中任何的对象都可以当作锁  如何避免多线程的问题  线程：进程中的最小的执行单位，一个进程中最少有一个线程 日常遇到的所有东西，map，class 等，只要没有特别强调，就一定不是线程安全的。   几乎所有的多线程隐患都是在多个线程访问的情况下产生的，所有我们要确保多线程访问的时候，程序按照我们预设的顺序去执行，这样就可以避免多线程的问题了。   synchronized 用于空值线程同步的，保证在多线程环境下不被多个线程同时执行，确保数据的完整性。当它锁住一个对象之后，必须等待这个线程执行完释放锁对象后才可以让别的线程获取对象。（可是这样跟没有多线程有什么区别呢）  class Thread { int count = 0; public synchronized void threadMethods(int j) { count++; int i = 1; j = j + 1; } }  同步块同步了什么东西？ (1) synchronized （一个对象）把这个对象当成锁 (2) static synchronized 方法，把 class 对象当成锁 (3)实例的 synchronized 方法把该实例当成锁  使用不可变类：string/integer java 的并发工具包 (1)任何使用 HashMap 且有线程安全问题的地方，可以无脑使用 Concurrent HashMap (2)将非原子操作改为原子操作（此时操作不可分割，就不会产生多线程的问题了） (3)ReentrantLock 作用于 synchronized 几乎一样。但它可以在 a 方法加锁，b 方法解锁。 ThreadLocal ThreadLocal 是线程的局部变量，是每一个线程所单独持有的。当使用 ThreadLocal 维护变量的时候，每一个使用这个变量的线程都会有一个这样的话，就不会存在线程安全的问题了。但要注意的是，由于 ThreadLocal 在每个线程中都创建了副本，所以需要考虑它对内存资源的消耗  适用于多线程的场景  CPU 密集型带来的提升有限   解压，解码等靠 cpu 解决的  IO 密集型   （下载）文件，这时候相对于 cpu 来说就很慢了。所以这时候多线程就很实用了 网络，与前者差不多  Object 类的线程方法  java 把线程作为语言特性，提供语言级别的支持 为什么 java 中的所有对象都可以成为锁：java 中的任何对象都是 object，都可以继承 object 的各种方法   Object.</description>
     </item>
     
     <item>
-      <title>第八篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <title>第十篇博客</title>
+      <link>http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Wed, 20 May 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&amp;gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  </description>
     </item>
     
     <item>
       <title>第七篇博客</title>
-      <link>http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/</link>
+      <link>http://huangshanqing.buzz/posts/7.io%E7%9A%84%E5%BC%82%E5%B8%B8/</link>
       <pubDate>Sun, 17 May 2020 21:39:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/io%E7%9A%84%E5%BC%82%E5%B8%B8/</guid>
+      <guid>http://huangshanqing.buzz/posts/7.io%E7%9A%84%E5%BC%82%E5%B8%B8/</guid>
       <description>IOException 是个很烦人的东西  方法的入口一般是参数，出口一般是 returnXXX。异常是给方法的另外一个出口 其实 IDE 会自动帮忙解决的，不过还是要明白什么意思  JAVA 的异常体系（回来看）  catch （exception）这种语句一般叫做错误处理。  异常相关的内容  throw 和 throws，前者是抛出一个异常，后者只是一个声明 如果调用了一个可能丢出异常的方法，要么自己也扔出一个异常要么用 try，catch 把这个异常给抓住。 throwable，exception 有毒的，是要被抛出来的异常。 runtimeException 是无毒的，是运行时的异常 error 是有毒的   有毒无毒的意思：有毒就是沾上了就要抛异常，无毒就不用。  异常和 error 的区别  异常的栈轨迹  什么是栈轨迹：就是错误里面的 rog.xxx 什么什么的  异常的处理方法  是不是有能力处理这个异常 本方法的异常归不归自己管 如非万不得已，不要忽略异常 尽量使用 JDK 的内置异常  </description>
     </item>
     
     <item>
       <title>第六篇博客</title>
-      <link>http://huangshanqing.buzz/posts/java%E7%9A%84io/</link>
+      <link>http://huangshanqing.buzz/posts/6.java%E7%9A%84io/</link>
       <pubDate>Sat, 09 May 2020 11:50:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/java%E7%9A%84io/</guid>
+      <guid>http://huangshanqing.buzz/posts/6.java%E7%9A%84io/</guid>
       <description>计算机多级系统 file 与 IO（Input and Output）  cpu，内存以及硬盘：在 cpu 看来，一切硬件的速度都很慢 文件的本质：字节流 字节流：无论是读还是写，都是一个一个字节进行的，看起来就像一条河流   http 协议也是这样，你向服务器发送字节流，服务器返回给你的也是字节流  读取的时候尽量使用绝对路径 file 指的是文件路径 绝对路径：王小明的爸爸；相对路径：爸爸（这个爸爸只有在特定的地方才生效，比如家里）  NIO  在 java 中如果一个名字代表一个类，那加一个 s 就代表相应的工具包  </description>
     </item>
     
     <item>
       <title>第四篇博客</title>
-      <link>http://huangshanqing.buzz/posts/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</link>
+      <link>http://huangshanqing.buzz/posts/4.web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</link>
       <pubDate>Mon, 27 Apr 2020 14:53:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</guid>
+      <guid>http://huangshanqing.buzz/posts/4.web%E5%89%8D%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/</guid>
       <description>Web 前后端基础架构 计算机网络是如何工作的 在打开⽹⻚的时候发⽣了什么   主机：很多互相连接的计算机。
   IP （Internet Protocol）地址：每个主机都有一个地址，它是 32 位的，连接在一起就是一个 IP 地址，它可以唯一的定位到一台主机。IP 地址非常难记，因此，DNS 运营而生。
   DNS：全称是 Domain Name Service （域名服务），它将域名转化为了 IP 地址。
@@ -139,10 +118,10 @@
     
     <item>
       <title>第三篇博客</title>
-      <link>http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/</link>
+      <link>http://huangshanqing.buzz/posts/3.collection%E4%BD%93%E7%B3%BB/</link>
       <pubDate>Tue, 21 Apr 2020 21:39:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/collection%E4%BD%93%E7%B3%BB/</guid>
+      <guid>http://huangshanqing.buzz/posts/3.collection%E4%BD%93%E7%B3%BB/</guid>
       <description>Collection 体系 Collection 是什么   Collection 可以看作一个接口，类似多态，是不能被实例化的（new Collection）。
   可以将它具体化的理解为：一篮子鸡蛋，一个队列的人等。它只包含一种元素。
   作用：批量操作成千上万的数据。
@@ -152,10 +131,10 @@
     
     <item>
       <title>第二篇博客</title>
-      <link>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <link>http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 21 Apr 2020 21:39:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <guid>http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
       <description>Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
   maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
   通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
@@ -167,10 +146,10 @@
     
     <item>
       <title>第一篇博客</title>
-      <link>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://huangshanqing.buzz/posts/1.%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 19 Apr 2020 11:50:38 +0800</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://huangshanqing.buzz/posts/1.%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>如何使用 hugo 搭建个人博客 How to make personal blog via hugo （for Win users）
  用 hugo 搭建博客的第一步，就是学习使用 Markdown 语法，这个语法非常简单，很快就能上手。   Before you create your blog，you need to learn how to use markdown. It‘s very easy.  安装 hugo install hugo
  https://github.com/gohugoio/hugo/releases ，找到 hugo_XXX_Windows 64bit.zip，我选择了大约 40M 的那个。下载并放到 D 盘的 Software 路径下，具体格式为 D:\Software\hugo\hugo.exe ;若没有此路径可以自行创建。   you need to open the link and find a document names hugo_XXX_Windows 64bit.zip and download.</description>
@@ -178,10 +157,10 @@
     
     <item>
       <title>第五篇博客</title>
-      <link>http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/</link>
+      <link>http://huangshanqing.buzz/posts/5.http%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://huangshanqing.buzz/posts/http%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://huangshanqing.buzz/posts/5.http%E5%9F%BA%E7%A1%80/</guid>
       <description>http 入门详解 复习  http 是互联网中所有的东西的基石 http 最重要的两种方法：get ，post  http status  就是 404，,200 之类的，具体需要的时候再去百度吧  HTTP 方法  get 方法：想要拿到的东西（请求一个网页） get 请求的数据全部都放在 HTTP request 的 header 中。 post 方法：想要推送的东西（登录） post 方法真正的数据是放在 body 里面的；登录接口一定要用 post 去发起。 http 状态  反爬虫手段  直接拒绝（401/404） 在返回的数据中“投毒”，返回错误的数据。  127.0.0.1 指向本地 码
  可爱的 http.cat 喵喵喵 返回 6 开头的状态码就可以骂后端了(可是好像后端是我诶)  body  哎哎哎哎哎哎（postman 好像是个很不错的工具）  http header  referer ：用来做防盗的，比如去 csdn 黏贴代码的时候就会有一个本代码来自 xxx 禁止二传 cookie：为什么服务器能够认识我们（打开淘宝不会显示别人的购物车）。   http 协议是无状态的  http body  encodeURI：输入的东西不是标准的，就会被转译。http 上传输的字符是有限范围内的。  最后附上自己写的代码 package com.</description>
     </item>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>concise 的博客  | 第二篇博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.69.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="第二篇博客" />
+<meta property="og:description" content="Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
+  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
+  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
+  maven 库中的包一经提交，不可更改，只能升级。
+  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
+  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
+  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" />
+<meta property="article:published_time" content="2020-04-21T21:39:38+08:00" />
+<meta property="article:modified_time" content="2020-04-21T21:39:38+08:00" />
+<meta itemprop="name" content="第二篇博客">
+<meta itemprop="description" content="Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
+  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
+  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
+  maven 库中的包一经提交，不可更改，只能升级。
+  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
+  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
+  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。">
+<meta itemprop="datePublished" content="2020-04-21T21:39:38&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-21T21:39:38&#43;08:00" />
+<meta itemprop="wordCount" content="107">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第二篇博客"/>
+<meta name="twitter:description" content="Maven 的包的基本特征   Convention over configuration（约定优于配置） 虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。
+  maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。
+  通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。
+  maven 库中的包一经提交，不可更改，只能升级。
+  maven 的中央仓库和本地仓库  中央仓库在远端的服务器上 maven 自动将需要的仓库从中央仓库中下载到本地仓库中  maven 的包冲突   全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。
+  mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样
+  maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://huangshanqing.buzz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      concise 的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/&amp;text=%e7%ac%ac%e4%ba%8c%e7%af%87%e5%8d%9a%e5%ae%a2" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://huangshanqing.buzz/posts/2.maven%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/&amp;title=%e7%ac%ac%e4%ba%8c%e7%af%87%e5%8d%9a%e5%ae%a2" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">第二篇博客</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-04-21T21:39:38&#43;08:00">April 21, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="maven-的包的基本特征">Maven 的包的基本特征</h1>
+<ol>
+<li>
+<p>Convention over configuration（约定优于配置）
+虽然 maven 不强制所有人按照约定管理代码，但基本上所有人都这么做。</p>
+</li>
+<li>
+<p>maven 给所有的包都添加了三个属性：groupID , artifactID , version 。需要某个包的时候，只需要按这三个属性检索即可，极大地提高了效率。</p>
+</li>
+<li>
+<p>通常而言在 google 搜索这三个属性并加上 maven 即可。将 mvn 官网提供的链接复制到 idea 后，需要刷新一下 mvn。</p>
+</li>
+<li>
+<p>maven 库中的包一经提交，不可更改，只能升级。</p>
+</li>
+</ol>
+<h1 id="maven-的中央仓库和本地仓库">maven 的中央仓库和本地仓库</h1>
+<ol>
+<li>中央仓库在远端的服务器上</li>
+<li>maven 自动将需要的仓库从中央仓库中下载到本地仓库中</li>
+</ol>
+<h1 id="maven-的包冲突">maven 的包冲突</h1>
+<ol>
+<li>
+<p>全限定类名是类的唯一标识，因此当多个同名的类出现在同一 Classpath 中，就会导致包冲突。如果出现了这种情况，JVM 会自动选择离项目距离最近的那个，这可能会导致一些错误发生。</p>
+</li>
+<li>
+<p>mvn 绝对不允许 Classpath 出现两个同名不同类的包。mvn 知道它们冲突是因为它们的 groupID 和 artifactID 一样但是版本不一样</p>
+</li>
+<li>
+<p>maven dependency：tree 用来看当前的依赖树。展示之前会自动解决掉冲突的包并去掉。真实项目中的 tree 会非常的长。</p>
+</li>
+</ol>
+<h2 id="包冲突解决思路">包冲突解决思路</h2>
+<ol>
+<li>
+<p>解决原则：最近的胜出，较远的淘汰。这个方法可能会遇到问题，例如：将较远的高版本 exclude 之后，运行代码可能会报错。要花时间分析它们之间的依赖关系，找清楚是谁被 maven 自动解决掉了。（可以运行之后查看报错信息）</p>
+</li>
+<li>
+<p>一个有用的插件：Dependency Analyzer</p>
+</li>
+<li>
+<p>去 github 的源代码查找两个版本有什么不一样（必须要有这一步才能判断我们具体应该使用哪个版本），因为 maven 在设计上并不会去分析这两个版本。</p>
+</li>
+<li>
+<p>解决办法</p>
+</li>
+</ol>
+<ul>
+<li>直接引入一个新的版本，再刷新 maven。</li>
+<li>手动 exclude 冲突的包：在 pom 文件里需要 exclude 的地方加上<!-- raw HTML omitted -->。</li>
+<li>利用 Dependency Analyzer 插件，插件中标红的右键 exclude 即可。当然这需要保证，未被 exclude 的版本是正确的，如果插件排除的是需要的版本，则可以采用第一个方法或者将包的版本号改掉</li>
+</ul>
+<h1 id="补充知识">补充知识</h1>
+<ol>
+<li>x.y.z x 是主版本号，y 是次版本号，z 是 bugfix，主要用于修 bug</li>
+<li>snapshot 供内部开发使用，可以频繁更新。缺点是较不稳定。snapshot 在中央仓库一般找不到。</li>
+</ol>
+<h2 id="maven-scope">maven scope</h2>
+<ol>
+<li>compile：在 main 和 test 中都可见</li>
+<li>test :只能在 test 这个类使用</li>
+<li>provided :只在编译的时候有效，运行的时候无效了。</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://huangshanqing.buzz/" >
+    &copy;  concise 的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

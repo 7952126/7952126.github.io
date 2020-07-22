@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>concise 的博客  | 第十篇博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.69.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="第十篇博客" />
+<meta property="og:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+<meta property="article:published_time" content="2020-05-20T14:53:38+08:00" />
+<meta property="article:modified_time" content="2020-05-20T14:53:38+08:00" />
+<meta itemprop="name" content="第十篇博客">
+<meta itemprop="description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  ">
+<meta itemprop="datePublished" content="2020-05-20T14:53:38&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-20T14:53:38&#43;08:00" />
+<meta itemprop="wordCount" content="250">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第十篇博客"/>
+<meta name="twitter:description" content="数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  "/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://huangshanqing.buzz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      concise 的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/&amp;text=%e7%ac%ac%e5%8d%81%e7%af%87%e5%8d%9a%e5%ae%a2" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://huangshanqing.buzz/posts/10.%E6%95%B0%E6%8D%AE%E5%BA%93/&amp;title=%e7%ac%ac%e5%8d%81%e7%af%87%e5%8d%9a%e5%ae%a2" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">第十篇博客</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-20T14:53:38&#43;08:00">May 20, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="数据库实战sql-语言">数据库实战，SQL 语言</h1>
+<h2 id="数据库实战">数据库实战</h2>
+<ol>
+<li>数据库的类型</li>
+</ol>
+<ul>
+<li>int/bigint 整数类型</li>
+<li>varchar(100)/TEXT 字符串类型</li>
+<li>timestamp 时间类型</li>
+</ul>
+<ol start="2">
+<li>JDBC Java Database Connection</li>
+<li>安装其他客户端 JDBC SQL client</li>
+</ol>
+<h2 id="sql-语言">SQL 语言</h2>
+<ol>
+<li>DDL 用得少，一般一次写好就不动了</li>
+</ol>
+<h3 id="用户表">用户表</h3>
+<ol>
+<li>感觉我这里的 idea 没有 database 啊，我先看着吧</li>
+<li>无论要用数据库做什么，都要新建一个用户表</li>
+</ol>
+<ul>
+<li>create table user（id bigint xxx）</li>
+<li>id 不可以重复，但名字可以重复</li>
+</ul>
+<h3 id="基本-sql">基本 SQL</h3>
+<ol>
+<li>insert into 增</li>
+<li>delete from 删 要加个 where ：delete from user where id=1；</li>
+</ol>
+<ul>
+<li>要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。</li>
+<li>逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）</li>
+</ul>
+<ol start="3">
+<li>update 改</li>
+</ol>
+<ul>
+<li>update user
+set status = 0，
+UPDATE_AT = now()
+where id = 2</li>
+</ul>
+<ol start="4">
+<li>select 查,比较复杂的</li>
+</ol>
+<ul>
+<li>select * from USER where ID&gt;0</li>
+<li>在两张表中把自己想要的东西全部筛出来：</li>
+</ul>
+<ol start="5">
+<li>其他重要知识：</li>
+</ol>
+<ul>
+<li>SQL 语句不区分大小写</li>
+<li>命名风格是下划线分割两个单词</li>
+</ul>
+<ol start="6">
+<li>SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）</li>
+</ol>
+<ul>
+<li>防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#</li>
+</ul>
+<h1 id="docker-的安装">docker 的安装</h1>
+<ol>
+<li>一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了</li>
+<li>后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading</li>
+<li>从礼拜一搞到现在，哎叹一口气。我真的太难了 8</li>
+<li>感觉我的 idea 好像也没怎么好的亚子，还在 running processes</li>
+</ol>
+<h1 id="数据库是怎么设计的原则">数据库是怎么设计的（原则）</h1>
+<ol>
+<li>每个实体一张表（用户/商品）</li>
+</ol>
+<ul>
+<li>每个实体都有一个主键 ID</li>
+<li>按照业务需要去建立索引</li>
+</ul>
+<ol start="2">
+<li>每个关系用一张表联系</li>
+</ol>
+<ul>
+<li>关系型数据库</li>
+</ul>
+<h1 id="sql-语言-1">sql 语言</h1>
+<ol>
+<li>查所有用户：select * from user</li>
+<li>数用户：select count（*） from user</li>
+<li>看地址 ：select * from user where ADDRESS =<code>shanghai</code></li>
+<li>看多少用户在上海：select count（*）from user where ADDRESS =<code>shanghai</code></li>
+<li>用* 这种方式查询所有的列</li>
+<li>查具体的列：select id, name from user where ADDRESS =<code>shanghai</code></li>
+<li>Order by (以及按降序排序) select id, name from user where ADDRESS =<code>shanghai</code> order by id desc</li>
+<li>分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)
+ Eg：select _ from user limit 2,3</li>
+<li>看看每个地区有多少用户：group by
+ select ADDRESS from user group by ADDRESS</li>
+<li>每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS</li>
+<li>Order 是 sql 关键字，所有要加反引号。获取订单表：select * from <code>ORDER</code></li>
+<li>每个商品被下了多少单 select GOODS_ID ,count(*) from <code>ORDER</code> group by GOODS_ID</li>
+<li>改列名 select GOODS_ID ,count(*) as count from <code>ORDER</code> group by GOODS_ID</li>
+<li>把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from <code>ORDER</code> group by GOODS_ID order by TOTAL desc</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://huangshanqing.buzz/" >
+    &copy;  concise 的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
