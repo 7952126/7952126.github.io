@@ -6,10 +6,30 @@
     <description>Recent content on concise 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 22 Jul 2020 14:53:38 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 14:53:38 +0800</lastBuildDate>
     
 	<atom:link href="http://huangshanqing.buzz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第十七篇博客</title>
+      <link>http://huangshanqing.buzz/posts/17.java%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Mon, 03 Aug 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/17.java%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%8D%E5%B0%84/</guid>
+      <description>java 的类型  平时用得少，但如果想写出花儿来，就必须用到这个 在 java 中，任何对象都继承了 Object，所以任何对象都是它的子类，所以可以  Object obj = new whiteCat(); 一个对象知道自己有什么类型，然后通过动态的方法调用，就叫反射 or 自省 JAVA 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 java 语言的反射机制。 双亲委派加载模型:双亲委派的意思是如果一个类加载器需要加载类，那么首先它会把这个类请求委派给父类加载器去完成，每一层都是如此。一直递归到顶层，当父加载器无法完成这个请求时，子类才会尝试去加载。这里的双亲其实就指的是父类，没有 mother。父类也不是我们平日所说的那种继承关系，只是调用逻辑是这样。  </description>
+    </item>
+    
+    <item>
+      <title>第十六篇博客</title>
+      <link>http://huangshanqing.buzz/posts/16.java%E7%9A%84%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Mon, 03 Aug 2020 14:53:38 +0800</pubDate>
+      
+      <guid>http://huangshanqing.buzz/posts/16.java%E7%9A%84%E6%B3%9B%E5%9E%8B/</guid>
+      <description>java 的泛型 泛型出现的目的 保证 java 的类型安全，增加了方便性:出现泛型之后不需要为了类型安全手写繁琐的代码了
+在有泛型的世界中，我们还支持无泛型的“原始类型”的容器嘛？ 还支持
+java 的擦除 擦除会带来问题  Object，Array 都可以传递子类型，但是 List 不可以 原因: 类型擦除 擦除的问题 (1) 泛型信息在运行期间完全不保留 (2) 编译器会警告,这个可以使用限定符 List&amp;lt;?&amp;gt; (3) List并不是 List的子类型  泛型的绑定    </description>
+    </item>
     
     <item>
       <title>第十五篇博客</title>

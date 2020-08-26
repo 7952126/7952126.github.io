@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://huangshanqing.buzz/posts/" />
-<meta property="og:updated_time" content="2020-07-22T14:53:38+08:00" />
+<meta property="og:updated_time" content="2020-08-03T14:53:38+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -91,6 +91,38 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://huangshanqing.buzz/posts/17.java%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="link black dim">
+        第十七篇博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      java 的类型  平时用得少，但如果想写出花儿来，就必须用到这个 在 java 中，任何对象都继承了 Object，所以任何对象都是它的子类，所以可以  Object obj = new whiteCat(); 一个对象知道自己有什么类型，然后通过动态的方法调用，就叫反射 or 自省 JAVA 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 java 语言的反射机制。 双亲委派加载模型:双亲委派的意思是如果一个类加载器需要加载类，那么首先它会把这个类请求委派给父类加载器去完成，每一层都是如此。一直递归到顶层，当父加载器无法完成这个请求时，子类才会尝试去加载。这里的双亲其实就指的是父类，没有 mother。父类也不是我们平日所说的那种继承关系，只是调用逻辑是这样。  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://huangshanqing.buzz/posts/16.java%E7%9A%84%E6%B3%9B%E5%9E%8B/" class="link black dim">
+        第十六篇博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      java 的泛型 泛型出现的目的 保证 java 的类型安全，增加了方便性:出现泛型之后不需要为了类型安全手写繁琐的代码了
+在有泛型的世界中，我们还支持无泛型的“原始类型”的容器嘛？ 还支持
+java 的擦除 擦除会带来问题  Object，Array 都可以传递子类型，但是 List 不可以 原因: 类型擦除 擦除的问题 (1) 泛型信息在运行期间完全不保留 (2) 编译器会警告,这个可以使用限定符 List&lt;?&gt; (3) List并不是 List的子类型  泛型的绑定    
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -217,36 +249,6 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       数据库实战，SQL 语言 数据库实战  数据库的类型   int/bigint 整数类型 varchar(100)/TEXT 字符串类型 timestamp 时间类型  JDBC Java Database Connection 安装其他客户端 JDBC SQL client  SQL 语言  DDL 用得少，一般一次写好就不动了  用户表  感觉我这里的 idea 没有 database 啊，我先看着吧 无论要用数据库做什么，都要新建一个用户表   create table user（id bigint xxx） id 不可以重复，但名字可以重复  基本 SQL  insert into 增 delete from 删 要加个 where ：delete from user where id=1；   要搞清楚物理删除和逻辑删除，物理删除就是数据从数据库中被抹去了。逻辑删除就是数据还在数据库中，我们假装看不见。 逻辑删除：update user set status = 0 where：id =2（一定要加这个 where）  update 改   update user set status = 0， UPDATE_AT = now() where id = 2  select 查,比较复杂的   select * from USER where ID&gt;0 在两张表中把自己想要的东西全部筛出来：  其他重要知识：   SQL 语句不区分大小写 命名风格是下划线分割两个单词  SQL 注入：因为 sql 命令没有验证传入的参数，导致攻击者可以通过精心设计的参数是的拼装出的 SQL 达到他的目的（以假乱真）   防范 sql 注入：不会使用 statement，太危险了，而会使用 PreparedStatement，把参数先用问号代替，需要用的时候再把参数传进#  docker 的安装  一开始搞了虚拟机，但是虚拟机其实真的很麻烦，因为多了一个连接的步骤，很多时候就搞不定了 后来把新电脑搞了回来，就打算重新开始安装 docker 了，现在 downloading 从礼拜一搞到现在，哎叹一口气。我真的太难了 8 感觉我的 idea 好像也没怎么好的亚子，还在 running processes  数据库是怎么设计的（原则）  每个实体一张表（用户/商品）   每个实体都有一个主键 ID 按照业务需要去建立索引  每个关系用一张表联系   关系型数据库  sql 语言  查所有用户：select * from user 数用户：select count（*） from user 看地址 ：select * from user where ADDRESS =shanghai 看多少用户在上海：select count（*）from user where ADDRESS =shanghai 用* 这种方式查询所有的列 查具体的列：select id, name from user where ADDRESS =shanghai Order by (以及按降序排序) select id, name from user where ADDRESS =shanghai order by id desc 分页 select _ from user limit (offset 从第几个元素开始查找,limit 最多返回几个元素)  Eg：select _ from user limit 2,3 看看每个地区有多少用户：group by  select ADDRESS from user group by ADDRESS 每个城市有多少人 ：select ADDRESS ,count(*) from user group by ADDRESS Order 是 sql 关键字，所有要加反引号。获取订单表：select * from ORDER 每个商品被下了多少单 select GOODS_ID ,count(*) from ORDER group by GOODS_ID 改列名 select GOODS_ID ,count(*) as count from ORDER group by GOODS_ID 把商品按照 id 分组，并求总的成交金额 Select GOODS_ID,sum（ GOODS_NUM*GOODS_PRICE ） as TOTAL from ORDER group by GOODS_ID order by TOTAL desc  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://huangshanqing.buzz/posts/7.io%E7%9A%84%E5%BC%82%E5%B8%B8/" class="link black dim">
-        第七篇博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      IOException 是个很烦人的东西  方法的入口一般是参数，出口一般是 returnXXX。异常是给方法的另外一个出口 其实 IDE 会自动帮忙解决的，不过还是要明白什么意思  JAVA 的异常体系（回来看）  catch （exception）这种语句一般叫做错误处理。  异常相关的内容  throw 和 throws，前者是抛出一个异常，后者只是一个声明 如果调用了一个可能丢出异常的方法，要么自己也扔出一个异常要么用 try，catch 把这个异常给抓住。 throwable，exception 有毒的，是要被抛出来的异常。 runtimeException 是无毒的，是运行时的异常 error 是有毒的   有毒无毒的意思：有毒就是沾上了就要抛异常，无毒就不用。  异常和 error 的区别  异常的栈轨迹  什么是栈轨迹：就是错误里面的 rog.xxx 什么什么的  异常的处理方法  是不是有能力处理这个异常 本方法的异常归不归自己管 如非万不得已，不要忽略异常 尽量使用 JDK 的内置异常  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://huangshanqing.buzz/posts/6.java%E7%9A%84io/" class="link black dim">
-        第六篇博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      计算机多级系统 file 与 IO（Input and Output）  cpu，内存以及硬盘：在 cpu 看来，一切硬件的速度都很慢 文件的本质：字节流 字节流：无论是读还是写，都是一个一个字节进行的，看起来就像一条河流   http 协议也是这样，你向服务器发送字节流，服务器返回给你的也是字节流  读取的时候尽量使用绝对路径 file 指的是文件路径 绝对路径：王小明的爸爸；相对路径：爸爸（这个爸爸只有在特定的地方才生效，比如家里）  NIO  在 java 中如果一个名字代表一个类，那加一个 s 就代表相应的工具包  
     </div>
   </div>
 </div>
